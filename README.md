@@ -10,6 +10,8 @@
 - [ECMAScript Compatibility Table](#ecmascript-compatibility-table)
 - [Strict Mode](#strict-mode)
 	- [Reference](#reference-1)
+- [Arrays](#arrays)
+- [Objects](#objects)
 
 ## [Operator Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
 
@@ -79,5 +81,23 @@ We wouldn't be able to use future reserved words like "interface", "private"
 and we can't
 
 ```javascript
-sample = 69; // this is was possible in silent mode
+sample = 69; // this was possible in silent mode
 ```
+
+## Arrays
+
+Object type, Mutable, Indexable, Elements can be of different types.
+
+-   Negative Indexing is not a thing in JavaScript. Confirmed from [here](https://stackoverflow.com/questions/13618571/should-negative-indexes-in-javascript-arrays-contribute-to-array-length)
+-   If we are trying to access the index outside the bounds of array doesn't raise IndexError like in python
+    Example:
+
+```javascript
+const sample = [1, 2];
+console.log(sample[1]); // 2
+console.log(sample[2]); // undefined
+```
+
+## Objects
+
+Objects are Javascript's Dictionary. But there's some important difference between this and python's Dictionary
