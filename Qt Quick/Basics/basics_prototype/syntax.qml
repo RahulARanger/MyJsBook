@@ -27,12 +27,28 @@ Window{ // able to exist coz of QtQuick.Window
             id: orangeRect // shouldn't be inside the quotes
             radius: 20 // like the border radius
 
+            Text{
+                id: orangeText
+                anchors.centerIn: parent
+            }
+
             MouseArea{
                 anchors.fill: parent // swallows it's parents
-                onClicked: {
+                hoverEnabled: true //default is false
+                onClicked: { // events
                     // js code
-                    console.log("Clicked Orange Rect");
-                    textToShow = "orange"
+                    textToShow = "Orange"
+                    console.log(`Clicked ${textToShow} Rect`);
+                    console.log(typeof orangeText) // this one block thing is js's object
+                    console.log(typeof textToShow) // this one is string
+                }
+
+                onEntered: { // enter
+                    orangeText.text = "Orange"
+                }
+
+                onExited: { // leave
+                    orangeText.text = "" // we can access the properties using the dot notation
                 }
             }
         }
@@ -44,12 +60,26 @@ Window{ // able to exist coz of QtQuick.Window
             id: blueRect // shouldn't be inside the quotes
             radius: 20
 
+            Text{
+                id: blueText
+                anchors.centerIn: parent
+            }
+
+
             MouseArea{
                 anchors.fill: parent // swallows it's parents
+                hoverEnabled: true //default is false
                 onClicked: {
-                    // js code
-                    console.log("Clicked Blue Rect");
                     textToShow = "Blue"
+                    console.log(`Clicked ${textToShow} Rect`);
+                }
+
+                onEntered: { // enter
+                    blueText.text = "Blue"
+                }
+
+                onExited: { // leave
+                    blueText.text = "" // we can access the properties using the dot notation
                 }
             }
         }
@@ -59,14 +89,28 @@ Window{ // able to exist coz of QtQuick.Window
             height: 100
             color: "green"
             id: greenRect // shouldn't be inside the quotes
-            radius: 20
+            radius: 20 // like the border radius
+
+            Text{
+                id: greenText
+                anchors.centerIn: parent
+            }
 
             MouseArea{
                 anchors.fill: parent // swallows it's parents
+                hoverEnabled: true //default is false
                 onClicked: {
                     // js code
-                    console.log("Clicked Green Rect");
-                    textToShow = "green"
+                    textToShow = "Green"
+                    console.log(`Clicked ${textToShow} Rect`);
+                }
+
+                onEntered: { // enter
+                    greenText.text = "Green"
+                }
+
+                onExited: { // leave
+                    greenText.text = "" // we can access the properties using the dot notation
                 }
             }
         }
@@ -76,18 +120,30 @@ Window{ // able to exist coz of QtQuick.Window
             height: 100
             color: "red"
             id: redRect // shouldn't be inside the quotes
-            radius: 20
+            radius: 20 // like the border radius
+
+            Text{
+                id: redText
+                anchors.centerIn: parent
+            }
 
             MouseArea{
                 anchors.fill: parent // swallows it's parents
+                hoverEnabled: true //default is false
                 onClicked: {
-                    // js code
-                    console.log("Clicked Red Rect");
-                    textToShow = "red"
+                    textToShow = "Red"
+                    console.log(`Clicked ${textToShow} Rect`);
+                }
+
+                onEntered: { // enter
+                    redText.text = "Red"
+                }
+
+                onExited: { // leave
+                    redText.text = "" // we can access the properties using the dot notation
                 }
             }
         }
-
         Rectangle{
             id: showRect
             width: 100; height: 100
@@ -97,14 +153,15 @@ Window{ // able to exist coz of QtQuick.Window
                 id: showArea
                 anchors.centerIn: parent
                 text: textToShow // using the custom property
+                // property binding
                 color: "orange"
             }
 
             MouseArea{
                 anchors.fill: parent
                 onClicked:{
-                    console.log("Clickd the circle")
-                    textToShow = "Hello"
+                    console.log("Clickd the circle", showArea.text)
+                    showArea.text = "blocked" // doing this removes the property binding
                 }
             }
 

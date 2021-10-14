@@ -3,7 +3,7 @@
 import QmlProject 1.1
 
 Project {
-    mainFile: "syntax.qml"
+    mainFile: "DataTypes.qml" // rename according to the file that we want to execute
 
     /* Include .qml, .js, and image files from current directory and subdirectories */
     QmlFiles {
