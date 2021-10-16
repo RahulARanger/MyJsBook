@@ -159,7 +159,7 @@ test = sample()
 print(type(test)) # tuple
 ```
 
-In JavaScript,
+In JavaScript
 
 ```javascript
 function sample() {

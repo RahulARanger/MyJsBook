@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/my_love.jpg</file>
+        <file>Images/rem-re-zero.gif</file>
+    </qresource>
+</RCC>
