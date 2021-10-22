@@ -16,6 +16,7 @@
 - [Incrementing a variable](#incrementing-a-variable)
 - [Returning Multiple Values](#returning-multiple-values)
 - [Float to Integer](#float-to-integer)
+- [node, npm version](#node-npm-version)
 
 ## [Operator Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
 
@@ -181,4 +182,19 @@ let sample = 6.9;
 
 console.log(sample | 0); // in python it would be error, since binary operators needs only int not float
 console.log(Math.trunc(sample)); // 6.9
+```
+
+## node, npm version
+
+prints the version of your node js and npm
+
+```cmd
+node -v
+npm -v
+```
+
+sample installation of package using npm
+
+```cmd
+npm install live-server -g
 ```

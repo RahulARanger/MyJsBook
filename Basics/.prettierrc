@@ -1,0 +1,7 @@
+{
+  "_comment": "this is how we provide options for a particular workspace for prettier",
+  "singleQuote": false,
+  "__comment": "above ones allows single quotes",
+  "arrowParens": "always",
+  "___comment": "This will avoid parenthesis for variables in functions"
+}
